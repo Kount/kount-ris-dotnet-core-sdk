@@ -1394,7 +1394,7 @@
       ]
     },
     "Microsoft.CSharp/4.0.1": {
-      "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
+      "sha512": "qWWBlxdyhscoNNmTmvHBUFLaZ12bUkahrGVanTG3F65Li6hSWQIsTQRQGIizIt+Voxe2btgKsEfgwIz0VlYPBA==",
       "type": "package",
       "path": "microsoft.csharp/4.0.1",
       "files": [
@@ -2549,7 +2549,7 @@
       ]
     },
     "System.Dynamic.Runtime/4.0.11": {
-      "sha512": "db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
+      "sha512": "Je+F2X5syHtpyrmrJTQf/lCMRKLw/GurbdIlYbMFXslAoSa/mkamN2gIWsnvz874Z79MTz/iBgz6lN7Uwo6zQQ==",
       "type": "package",
       "path": "system.dynamic.runtime/4.0.11",
       "files": [
@@ -4777,8 +4777,8 @@
     },
     "KountRISSdkCore/1.0.0": {
       "type": "project",
-      "path": "../KountRISSdkCore/KountRISSdkCore.csproj",
-      "msbuildProject": "../KountRISSdkCore/KountRISSdkCore.csproj"
+      "path": "../SDK/KountRISSdkCore.csproj",
+      "msbuildProject": "../SDK/KountRISSdkCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4798,11 +4798,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITT Apps\\KountAPI\\kount-ris-dotnet-core-sdk-master\\KountRISSdkCore\\KountRisCoreConfigTest\\KountRisCoreConfigTest.csproj",
+      "projectUniqueName": "D:\\ITT Apps\\KountAPI\\KountRISSdkCore\\kount-ris-dotnet-core-sdk\\KountRisCoreConfigTest\\KountRisCoreConfigTest.csproj",
       "projectName": "KountRisCoreConfigTest",
-      "projectPath": "D:\\ITT Apps\\KountAPI\\kount-ris-dotnet-core-sdk-master\\KountRISSdkCore\\KountRisCoreConfigTest\\KountRisCoreConfigTest.csproj",
+      "projectPath": "D:\\ITT Apps\\KountAPI\\KountRISSdkCore\\kount-ris-dotnet-core-sdk\\KountRisCoreConfigTest\\KountRisCoreConfigTest.csproj",
       "packagesPath": "C:\\Users\\bingyan.sahoo\\.nuget\\packages\\",
-      "outputPath": "D:\\ITT Apps\\KountAPI\\kount-ris-dotnet-core-sdk-master\\KountRISSdkCore\\KountRisCoreConfigTest\\obj\\",
+      "outputPath": "D:\\ITT Apps\\KountAPI\\KountRISSdkCore\\kount-ris-dotnet-core-sdk\\KountRisCoreConfigTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4815,14 +4815,14 @@
         "netcoreapp2.1"
       ],
       "sources": {
-        "D:\\ITT Apps\\TestTech\\WebApiNSwag\\KHashLibrary\\KhashLibrary.client": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "D:\\ITT Apps\\KountAPI\\kount-ris-dotnet-core-sdk-master\\KountRISSdkCore\\KountRISSdkCore\\KountRISSdkCore.csproj": {
-              "projectPath": "D:\\ITT Apps\\KountAPI\\kount-ris-dotnet-core-sdk-master\\KountRISSdkCore\\KountRISSdkCore\\KountRISSdkCore.csproj"
+            "D:\\ITT Apps\\KountAPI\\KountRISSdkCore\\kount-ris-dotnet-core-sdk\\SDK\\KountRISSdkCore.csproj": {
+              "projectPath": "D:\\ITT Apps\\KountAPI\\KountRISSdkCore\\kount-ris-dotnet-core-sdk\\SDK\\KountRISSdkCore.csproj"
             }
           }
         }

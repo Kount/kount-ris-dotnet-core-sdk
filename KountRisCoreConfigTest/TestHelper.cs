@@ -11,8 +11,8 @@ namespace KountRisConfigTest
 
     public class TestHelper
     {
-        //public const string TEST_API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5OTk2NjYiLCJhdWQiOiJLb3VudC4xIiwiaWF0IjoxNDg4NTYzMzgzLCJzY3AiOnsia2EiOm51bGwsImtjIjpudWxsLCJhcGkiOmZhbHNlLCJyaXMiOnRydWV9fQ.u8ycf3GuUKKHpNsR8BL40VxLDGFMEpO59k6cYcku9Tc";
-        //public const int TEST_MERCHANT_ID = 999666;
+        public const string TEST_API_KEY = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI5OTk2NjYiLCJhdWQiOiJLb3VudC4xIiwiaWF0IjoxNDg4NTYzMzgzLCJzY3AiOnsia2EiOm51bGwsImtjIjpudWxsLCJhcGkiOmZhbHNlLCJyaXMiOnRydWV9fQ.u8ycf3GuUKKHpNsR8BL40VxLDGFMEpO59k6cYcku9Tc";
+        public const int TEST_MERCHANT_ID = 999666;
 
         /// <summary>
         /// Payment Type
@@ -206,6 +206,9 @@ namespace KountRisConfigTest
         public static Inquiry DefaultInquiry(out string sid, out string orderNum)
         {
             Inquiry inquiry = new Inquiry();
+
+            inquiry.SetMerchantId(TEST_MERCHANT_ID); // 999666
+            inquiry.SetApiKey(TEST_API_KEY);
 
             // generate session id from new guid
             sid = Guid.NewGuid().ToString().Replace("-", String.Empty);
