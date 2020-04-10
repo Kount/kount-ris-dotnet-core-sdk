@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KountRISSdkCore", "SDK\KountRISSdkCore.csproj", "{8C994DCF-4B85-47A8-9596-C474993C1BB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KountRISSdkCore", "KountRISSdkCore\KountRISSdkCore.csproj", "{8C994DCF-4B85-47A8-9596-C474993C1BB5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KountRisCoreConfigTest", "KountRisCoreConfigTest\KountRisCoreConfigTest.csproj", "{DD6B52A3-F4D5-4E3F-A226-20FFA47DA0FD}"
 EndProject

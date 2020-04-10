@@ -334,61 +334,6 @@ namespace KountRisConfigTest
         }
 
         /// <summary>
-        /// TEST 8
-        /// Mode J call one threshold triggered.
-        /// "KC_EVENT_1_CODE": "orderTotalDecline",
-        /// "KC_EVENT_1_DECISION": "D"
-        /// </summary>
-        //[Fact]
-        //public void RisJOneKountCentralRuleDecline()
-        //{
-        //    Inquiry inquiry = TestHelper.CreateInquiry(PTOK, out _sid, out _orderNum);
-
-        //    inquiry.SetMode(InquiryTypes.ModeJ);
-        //    inquiry.SetTotal(1000);
-        //    inquiry.SetKountCentralCustomerId("KCentralCustomerDeclineMe");
-
-        //    // set CART with one item
-        //    var cart = new ArrayList();
-        //    cart.Add(new CartItem("cart item 0 type", "cart item 0", "cart item 0 description", 10, 1234));
-        //    inquiry.SetCart(cart);
-
-        //    Response response = inquiry.GetResponse();
-        //    // optional getter
-        //    var errors = response.GetErrors();
-        //    Assert.True(errors.Count == 0, String.Join(Environment.NewLine, errors, "There are errors in response!"));
-
-        //    var mode = response.GetMode();
-        //    Assert.True("J".Equals(mode), $"Update failed! Wrong response mode {mode}.");
-
-        //    var warnings = response.GetWarnings();
-        //    Assert.True(warnings.Count == 0, String.Join(Environment.NewLine, warnings, "There are warnings in response!"));
-        //    /*
-        //      "KC_TRIGGERED_COUNT": 1,
-        //      "KC_WARNING_COUNT": 0,
-        //      "KC_DECISION": "D",
-        //      "KC_EVENT_1_CODE": "orderTotalDecline",
-        //      "KC_EVENT_1_DECISION": "D"
-        //     */
-        //    var kcCustId = response.GetKountCentralCustomerId();
-        //    var kcDecision = response.GetKountCentralDecision();
-        //    Assert.True("D".Equals(kcDecision), $"Inquiry failed! KC Decision {kcDecision} is not equal to D");
-
-        //    var kcErrs = response.GetKountCentralErrors();
-        //    Assert.True(kcErrs.Count == 0, $"Inquiry failed! KC Errors: {String.Join(Environment.NewLine, kcErrs)}");
-
-        //    var kcWarn = response.GetKountCentralWarnings();
-        //    Assert.True(kcWarn.Count == 0, $"Inquiry failed! KC Warnings: {String.Join(Environment.NewLine, kcWarn)}");
-
-        //    var kcEvents = response.GetKountCentralThresholdEvents();
-        //    Assert.True(kcEvents.Count == 1, $"Inquiry failed! KC Events: {kcEvents.Count} are not 1.");
-        //    Assert.True("D".Equals(kcEvents[0].Decision), $"Inquiry failed! Wrong decisions d1 = {kcEvents[0].Decision} by Kount Central ThresholdEvents.");
-
-        //    var code1 = kcEvents[0].Code;
-        //    Assert.True("orderTotalDecline".Equals(code1), $"Inquiry failed! Wrong  KC codes: {code1}, expected orderTotalDecline.");
-        //}
-
-        /// <summary>
         /// TEST 9
         /// Mode U call submits updated values, but return values do not include the re-evalued transaction results.
         /// Default values mode Q transaction, capture TRAN, SESS, ORDR values, use those to submit a mode U
