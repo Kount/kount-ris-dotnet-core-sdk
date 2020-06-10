@@ -37,7 +37,7 @@ namespace KountRisCoreTest
          [Fact]
         public void FromAppSettings_assigns_Version()
         {
-            Assert.Equal("0695", SUT.Version);
+            Assert.Equal("0700", SUT.Version);
         }
 
          [Fact]
@@ -61,7 +61,7 @@ namespace KountRisCoreTest
          [Fact]
         public void FromAppSettings_assigns_ConfigKey()
         {
-            Assert.Null(SUT.ConfigKey);
+            Assert.NotNull(SUT.ConfigKey);
         }
     }
 }
