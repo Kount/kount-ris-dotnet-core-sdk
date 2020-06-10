@@ -13,7 +13,7 @@ namespace KountRisCoreTest
         private string _orderNum = "";
         private Inquiry inquiry;
 
-        public  RisValidatorIpAddressTest()
+        public RisValidatorIpAddressTest()
         {
             this.inquiry = TestHelper.DefaultInquiry(out _sid, out _orderNum);
             this.inquiry.SetNoPayment();
@@ -104,13 +104,21 @@ namespace KountRisCoreTest
         {
             // Arrange
             // Characters that are not allowed
-            inquiry.SetIpAddress("2001:0:3238:mech:63::FEFB");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("2001:0:3238:mech:63::FEFB");
 
-            // Act
-            Response response = inquiry.GetResponse();
-
+                // Act
+                Response response = inquiry.GetResponse();
+            }
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
+
         }
 
         [Fact]
@@ -118,13 +126,21 @@ namespace KountRisCoreTest
         {
             // Arrange
             // extra 0 not allowed
-            inquiry.SetIpAddress("02001:0000:1234:0000:0000:C1C0:ABCD:0876");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("02001:0000:1234:0000:0000:C1C0:ABCD:0876");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
+            }
 
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         [Fact]
@@ -132,13 +148,21 @@ namespace KountRisCoreTest
         {
             // Arrange
             // junk after valid address
-            inquiry.SetIpAddress("2001:0000:1234:0000:0000:C1C0:ABCD:0876  0");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("2001:0000:1234:0000:0000:C1C0:ABCD:0876  0");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
+            }
 
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         [Fact]
@@ -146,12 +170,20 @@ namespace KountRisCoreTest
         {
             // Arrange
             // internal space
-            inquiry.SetIpAddress("2001:0000:1234:0000:0000:C1C0:ABCD:0876  0");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("2001:0000:1234:0000:0000:C1C0:ABCD:0876  0");
 
-            // Act
-            Response response = inquiry.GetResponse();
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+                // Act
+                Response response = inquiry.GetResponse();
+            }
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
+            Assert.True(validationError, "Validation error occured");
         }
 
         [Fact]
@@ -159,14 +191,21 @@ namespace KountRisCoreTest
         {
             // Arrange
             // seven segments
-            inquiry.SetIpAddress("3ffe:0b00:0000:0001:0000:0000:000a");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("3ffe:0b00:0000:0001:0000:0000:000a");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
+            }
 
-
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         [Fact]
@@ -174,13 +213,21 @@ namespace KountRisCoreTest
         {
             // Arrange
             // Nine segments
-            inquiry.SetIpAddress("FF02:0000:0000:0000:0000:0000:0000:0000:0001");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("FF02:0000:0000:0000:0000:0000:0000:0000:0001");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
+            }
 
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         [Fact]
@@ -188,13 +235,21 @@ namespace KountRisCoreTest
         {
             // Arrange
             // double "::"
-            inquiry.SetIpAddress("3ffe:b00::1::a");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("3ffe:b00::1::a");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
+            }
 
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         [Fact]
@@ -202,13 +257,21 @@ namespace KountRisCoreTest
         {
             // Arrange
             // double "::"
-            inquiry.SetIpAddress("::1111:2222:3333:4444:5555:6666::");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("::1111:2222:3333:4444:5555:6666::");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
+            }
 
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         #endregion
@@ -231,13 +294,22 @@ namespace KountRisCoreTest
         public void TestFailingIpv4Local()
         {
             // Arrange
-            inquiry.SetIpAddress("192.1.100.2048");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("192.1.100.2048");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
 
+            }
+
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         [Fact]
@@ -257,13 +329,22 @@ namespace KountRisCoreTest
         {
             // Arrange
             // Three segments
-            inquiry.SetIpAddress("8.8.8");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("8.8.8");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
 
+            }
+
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         [Fact]
@@ -271,13 +352,22 @@ namespace KountRisCoreTest
         {
             // Arrange
             // 256 is out of range
-            inquiry.SetIpAddress("127.0.0.256");
+            bool validationError = false;
+            try
+            {
+                inquiry.SetIpAddress("127.0.0.256");
 
-            // Act
-            Response response = inquiry.GetResponse();
+                // Act
+                Response response = inquiry.GetResponse();
 
+            }
+
+            catch (ValidationException ee)
+            {
+                validationError = true;
+            }
             // Assert - Expects exception
-            Assert.Throws<Exception>(() => typeof(Kount.Ris.ValidationException));
+            Assert.True(validationError, "Validation error occured");
         }
 
         #endregion

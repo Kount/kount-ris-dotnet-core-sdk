@@ -61,7 +61,7 @@ namespace KountRisCoreTest
          [Fact]
         public void FromAppSettings_assigns_ConfigKey()
         {
-            Assert.Null(SUT.ConfigKey);
+            Assert.NotNull(SUT.ConfigKey);
         }
     }
 }

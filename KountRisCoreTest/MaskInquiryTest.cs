@@ -232,7 +232,7 @@ namespace KountRisCoreTest
         {
             Inquiry inquiry = TestHelper.CreateInquiryMasked(PTOK, out _sid, out _orderNum);
 
-            //inquiry.SetPayment(TestHelper.PTYP_CARD, "BADPTOK");
+            inquiry.SetPayment(TestHelper.PTYP_CARD, "BADPTOK");
             //inquiry.SetParameter("PTOK", Khash.HashPaymentToken("BADPTOK"));
             inquiry.SetUserDefinedField("UDF_DOESNOTEXIST", "throw a warning please!");
 
