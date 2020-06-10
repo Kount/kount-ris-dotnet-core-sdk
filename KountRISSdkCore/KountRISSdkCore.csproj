@@ -3,11 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
 	 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-	<PackageId>RTestDotnetCore</PackageId>
+	<PackageId>Kount.Net.RisCoreSDK</PackageId>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Version>1.0.0</Version>
-	<Authors>Bigyan</Authors>
-  <Company>Bigyan test</Company>
+	<Authors>Kount Inc.</Authors>
+  <Company>Kount</Company>
+  <PackageLicenseUrl>https://kount.com/</PackageLicenseUrl>
+  <Copyright>Kount Inc.</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
