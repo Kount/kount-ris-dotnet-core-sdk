@@ -6,6 +6,7 @@
 namespace Kount.Ris
 {
     using System;
+    using Microsoft.Extensions.Logging;
 
     /// <summary>
     /// Update class. A bunch of setters for sending transaction update <br/>
@@ -27,15 +28,10 @@ namespace Kount.Ris
         private const char RfcbC = 'C';
 
         /// <summary>
-        /// The Logger to use.
-        /// </summary>
-        private static readonly log4net.ILog logger = log4net.LogManager.GetLogger(typeof(Update));
-
-        /// <summary>
         /// Constructor. Sets the mode to 'U' by default.
         /// Use setMode(char) to change it.
         /// </summary>
-        public Update() : base()
+        public Update(ILogger logger = null) : base(true, null)
         {
             this.SetMode(Enums.UpdateTypes.ModeU);
         }
@@ -48,7 +44,8 @@ namespace Kount.Ris
         /// `Ris.Url`, 
         /// `Ris.MerchantId`, 
         /// `Ris.Config.Key` and `Ris.Connect.Timeout` are set.</param>
-        public Update(bool checkConfiguration) : base(checkConfiguration)
+        /// <param name="logger">ILogger object for logging output</param>
+        public Update(bool checkConfiguration, ILogger logger = null) : base(checkConfiguration, logger)
         {
             this.SetMode(Enums.UpdateTypes.ModeU);
         }
@@ -62,7 +59,8 @@ namespace Kount.Ris
         /// `Ris.MerchantId`, 
         /// `Ris.Config.Key` and `Ris.Connect.Timeout` are set.</param>
         /// <param name="configuration">Configuration class with raw values</param>
-        public Update(bool checkConfiguration, Configuration configuration) : base(checkConfiguration, configuration)
+        /// <param name="logger">ILogger object for logging output</param>
+        public Update(bool checkConfiguration, Configuration configuration, ILogger logger = null) : base(checkConfiguration, configuration, logger)
         {
             this.SetMode(Enums.UpdateTypes.ModeU);
         }
@@ -119,7 +117,7 @@ namespace Kount.Ris
             string message = "The method " +
                 "Kount.Ris.Update.SetPaypalId() is obsolete. " +
                 "Use Kount.Ris.Update.SetPaypalPayment(bool) instead.";
-            logger.Info(message);
+            logger.LogInformation(message);
             this.SetPayment(Enums.PaymentTypes.Paypal, paypalId);
         }
     }

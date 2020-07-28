@@ -5,7 +5,7 @@
 	 <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	<PackageId>Kount.Net.RisCoreSDK</PackageId>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
 	<Authors>Kount Inc.</Authors>
   <Company>Kount</Company>
   <PackageLicenseUrl>https://kount.com/</PackageLicenseUrl>
@@ -35,15 +35,12 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="3.1.0" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.5" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="log4net.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
