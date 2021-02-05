@@ -502,5 +502,27 @@ namespace KountRisCoreTest
             var auto = response.GetAuto();
             Assert.True("A".Equals(auto), $"Inquiry failed! Approval status {auto} is wrong, expected 'A'.");
         }
+
+        /// <summary>
+        /// <b>TEST 12</b>
+        /// should set the connect timeout from programmatic configuration
+        /// </summary>
+        [Fact]
+        public void TestConnectTimeOutFromProgrammaticConfiguration()
+        {
+
+            Inquiry inquiry = TestHelper.CreateInquiry(KHASH_PTOK, out _sid, out _orderNum);
+            inquiry.SetConnectTimeOut(20000);
+            var cart = new ArrayList();
+            cart.Add(new CartItem("cart item 0 type", "cart item 0", "cart item 0 description", 10, 1234));
+            inquiry.SetCart(cart);
+            int connectTimeout = inquiry.GetConnectTimeOut();
+            Assert.Equal(20000, connectTimeout);
+            //SET Customer User-Agent HTTP header UAGT
+            Response response = inquiry.GetResponse();
+            var errors = response.GetErrors();
+            Assert.True(errors.Count == 0, String.Join(Environment.NewLine, errors, "There are errors in response!"));
+
+        }
     }
 }
